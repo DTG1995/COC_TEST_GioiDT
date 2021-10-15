@@ -1,0 +1,48 @@
+
+@path-font: '../../../assets/fonts';
+
+@font-face {
+  font-family: 'Material Design Icons';
+  src: url('@{path-font}/materialdesignicons-webfont.eot'), /* IE9 Compat Modes */
+    url('@{path-font}/materialdesignicons-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+    url('@{path-font}/materialdesignicons-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+    url('@{path-font}/materialdesignicons-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+.icons{
+  font-size: 12px ;
+  &::before {
+    display: inline-block;
+    // font-style: normal;
+    // font-variant-ligatures: normal;
+    // font-variant-caps: normal;
+    // font-variant-numeric: normal;
+    // font-variant-east-asian: normal;
+    // font-weight: normal;
+    // font-stretch: normal;
+    // font-family: 'Material Design Icons';
+    font: normal normal normal 1em 'Material Design Icons';
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  &.account::before {
+    content: '\F0004';
+  }
+  &.check-bold::before {
+    content: '\F0E1E';
+  }
+  &.close-thick::before {
+    content: '\F1398';
+  }
+  &.square-edit-outline::before {
+    content: '\F090C';
+  }
+  &.trash-can-outline::before {
+    content: '\F0A7A';
+  }
+}
+
+

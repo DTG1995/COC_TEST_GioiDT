@@ -1,0 +1,127 @@
+@import url(./values.less);
+@font-path: '../assets/fonts';
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('@{font-path}/Helvetica Neue.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue';
+  font-size: 15px;
+  background-color: @document-color;
+}
+
+a,
+a:active,
+a:hover {
+  color: @primary-color;
+  text-decoration: none;
+}
+
+// control css
+.btn {
+  padding: 10px;
+  border: 2px solid @header-color;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  &[type="text"] {
+    border: none;
+    padding: 5px;
+    background-color: transparent;
+  }
+  &.btn-large {
+    padding: 19px;
+    border-radius: 50px;
+    color: @text-white;
+    font-size: 20px;
+  }
+
+  &.btn-primary {
+    background-color: @header-color;
+    color: @text-black;
+  }
+
+  &.btn-submit {
+    border-color: @primary-color;
+    background-color: @primary-color;
+    min-width: 120px
+  }
+
+}
+.input-checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: max-content;
+  margin: 0 auto;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &~ .checkmark {
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      border: 1px solid @border-color;
+    }
+  }
+  &:hover input ~ .checkmark {
+    background-color: @header-color;
+  }
+  input:checked ~ .checkmark {
+    background-color: @header-color;
+  }
+}
+
+.app-layout {
+  .app-body {
+    display: flex;
+    .app-content {
+      flex: auto;
+      .content-header {
+        background-color: @primary-color;
+        padding: 42px 42px 72px;
+        font-size: 30px;
+        font-weight: bold;
+        color: @text-white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .control {
+          .btn {
+            width: 170px;
+            & + .btn {
+              margin-left: 16px;
+            }
+          }
+        }
+      }
+      .content-body {
+        border-radius: 3px;
+        margin: 40px;
+        margin-top: -36px;
+        background-color: @text-white;
+        padding: 30px 23px;
+        .content-app {
+          border: 1px solid @border-color;
+          padding: 26px 38px;
+          min-height: 445px;
+        }        
+      }
+    }
+
+  }
+}

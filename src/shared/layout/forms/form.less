@@ -1,0 +1,45 @@
+@import url(../../../styles/values.less);
+.validation-form {
+  .form-item {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    .form-item-label {
+      flex: 40% 0;
+      text-align: left;
+    }
+    .form-item-control {
+      flex: auto;
+      .form-control {
+        width: 100%;
+      }
+      .form-item-msg {
+        color: @danger-color;
+        font-size: 8px;
+        text-align: left;
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+.form-control {
+  border: 1px solid @form-control-border;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  appearance: auto;
+  min-width: 200px;
+  &.primary {
+    background-color: @form-control-primary-bg;
+    border-color: @form-control-primary-border;
+  }
+  &.control-error {
+    background-color: fade(@danger-color, 10);
+  }
+
+  &:focus {
+    outline: 2px solid @form-control-primary-border;;
+  }
+}

@@ -1,0 +1,23 @@
+@import url(../../../styles/values.less);
+
+.slider-menu {
+  padding: 69px 20px 20px;
+  background-color: @text-white;
+  height: calc(100vh - 72px);
+  box-sizing: border-box;
+  .menu-item {
+    font-size: 15px;
+    border-radius: 5px;
+    a {
+      padding: 20px;
+      text-align: center;
+      display: block;
+    }
+    &.active {
+      background-color: @primary-color;
+      a {
+        color: @text-white;
+      }
+    }
+  }
+}

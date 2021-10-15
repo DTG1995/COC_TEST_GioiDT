@@ -1,0 +1,21 @@
+@import url(../../../styles/values.less);
+
+.layout-header {
+  background-color: @header-color;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .user-info {
+    text-align: center;
+    border-radius: 50%;
+    background-color: @text-black;
+    width: 26px;
+    height: 26px;
+    .icons.account {
+      font-size: 23px;
+      color: @text-white;
+    }
+  }
+}

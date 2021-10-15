@@ -1,0 +1,57 @@
+@import url(../../../styles/values.less);
+
+body.on-show-modal {
+  overflow: hidden;
+}
+
+.app-modal {
+  position: fixed;
+  background: @modal-wrapper;
+  top: 0;
+  left: 0;
+  z-index: @zindex-modal;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  .modal {
+    margin: 0 auto;
+    background-color: @modal-background;
+    padding: 24px 45px 45px;
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .modal-title {
+        h2 {
+          margin: 26px 0; 
+        }
+      }
+      .close-modal {
+        margin-left: 20px;
+        margin-right: -24px;
+        .icons {
+          font-size: 23px;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          border: 2px solid @text-black;
+          display: block;
+          cursor: pointer;
+        }
+      }
+    }
+    .modal-content {
+      margin-bottom: 20px;
+    }
+    .modal-footer {
+      .btn {
+        min-width: 120px;
+        & + .btn {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
