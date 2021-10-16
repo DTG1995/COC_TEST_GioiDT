@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Icons } from '../icons';
 import './slider-menu.less';
@@ -6,6 +7,7 @@ import './slider-menu.less';
 export const SliderMenu = (props) => {
   const [activeKey, setActiveKey] = useState('users');
   const [collapse, setCollapse] = useState(false);
+  const location = useLocation();
 
   const listMenu = [
     {
@@ -46,6 +48,17 @@ export const SliderMenu = (props) => {
   useEffect(() => {
     updateTitle(listMenu[0]);
   }, []);
+
+  useEffect(()=> {
+    updateTitle(listMenu[0]);
+    listMenu.every(item => {
+      if(location.pathname.startsWith(item.href)) {
+        updateTitle(item);
+        return false;
+      }
+      return true;
+    });
+  },[location.pathname]);
   return (
     <div className={`slider-menu ${collapse ? 'collapse' : 'expand'}`}>
       <div className="slider-content">
