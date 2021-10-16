@@ -3,7 +3,19 @@
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('@{font-path}/Helvetica Neue.ttf');
+  src: url('@{font-path}/Helvetica-Neue-regular.ttf');
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('@{font-path}/Helvetica-Neue-bold.ttf');
+  font-weight: bold;
+}
+
+html,
+body,
+#root,
+.app-layout {
+  height: 100%;
 }
 
 body {
@@ -89,6 +101,9 @@ a:hover {
 .app-layout {
   .app-body {
     display: flex;
+    padding-top: 71px;
+    height: 100%;
+    box-sizing: border-box;
     .app-content {
       flex: auto;
       .content-header {
@@ -123,5 +138,64 @@ a:hover {
       }
     }
 
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .app-layout {
+    .app-body {
+      .app-content {
+        padding-left: 40px;
+        .content-body {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .app-layout .app-body .app-content .content-body .content-app {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .app-layout {
+    .app-body {
+      .app-content {
+        .content-header {
+          flex-wrap: wrap;
+          .title,
+          .control {
+            width: 100%;
+          }
+          .control {
+            text-align: right;
+            .btn {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width: 460px) {
+  .app-layout {
+    .app-body {
+      .app-content {
+        .content-header {
+          padding: 72px 10px 52px 10px;
+        }
+        .content-body {
+          padding: 30px 10px;
+        }
+      }
+    }
   }
 }

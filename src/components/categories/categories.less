@@ -36,3 +36,80 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .area-categories {
+    table {
+      th {
+        display: none
+      }
+      tbody>tr {
+        display: flex;
+        flex-wrap: wrap;
+        &:nth-child(even) {
+          background: fade(@header-color, 25);
+        }
+        td {
+          padding: 0;
+          border-width: 0;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 10px;
+          &::before {
+            display: block;
+            width: 30%;
+            min-width: 77px;
+            background: fade(@primary-color, 80);
+            color: @text-white;
+            padding: 10px 5px;
+            text-align: left;
+            word-wrap: break-word;
+          }
+          .content-cell {
+            width: 70%;
+          }
+          &:first-child::before {
+            content: 'Key';
+          }
+          &:nth-child(2)::before {
+            content: 'Display Name';
+          }
+          &:nth-child(3)::before {
+            content: 'Show/ Hide';
+          }
+          &:nth-child(4){
+            &::before {
+              content: 'Order';
+            }
+          }
+          &:nth-child(5)::before {
+            content: 'Edit';
+          }
+          &:nth-child(6)::before {
+            content: 'Delete';
+          }
+          &:nth-child(7)::before {
+            content: 'Bulk Delete';
+          }
+          &:nth-child(5),
+          &:nth-child(6) {
+            button {
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {  
+  .area-categories {
+    .form-add-edit-category {  
+      .modal-content {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}

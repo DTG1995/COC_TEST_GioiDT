@@ -1,17 +1,23 @@
 @import url(../../../styles/values.less);
 
 .slider-menu {
-  padding: 69px 20px 20px;
+  padding: 69px 0 0;
   background-color: @text-white;
-  height: calc(100vh - 72px);
   box-sizing: border-box;
   .menu-item {
+    margin: 0 20px;
     font-size: 15px;
     border-radius: 5px;
     a {
       padding: 20px;
       text-align: center;
       display: block;
+      transition: font-size 300ms;
+      .icons {
+        font-size: 23px;
+        display: none;
+        transition: display 300ms;
+      }
     }
     &.active {
       background-color: @primary-color;
@@ -20,4 +26,89 @@
       }
     }
   }
+
+}
+
+
+@media screen and (max-width: 840px) {
+.slider-menu {
+  position: fixed;
+  height: calc(100vh - 72px);
+  max-width: 204px;
+  width: 100%;
+  transition: all 300ms;
+  padding-top: 20px;
+  .slider-content {
+    position: relative;
+    height: 100%; 
+    .area-control-collapse {
+      position: absolute;
+      height: 45px;
+      background-color: @header-color;
+      width: 100%;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+  .customs-collapse {
+    width: 13px;
+    height: 13px;
+    position: relative;
+    margin: 0 auto;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 16px;
+      background-color: @text-black;
+      display: block;
+      transform: rotate(45deg);
+      top: -5px;
+      left: 5px;
+      transition: transform 300ms;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 16px;
+      background-color: @text-black;
+      display: block;
+      transform: rotate(-45deg);
+      top: 5px;
+      left: 5px;
+      transition: transform 300ms;
+    }
+  }
+  &.collapse {
+    width: 40px;
+    transition: width 300ms;
+    padding-top: 0;
+    .menu-item {
+      margin: 0;
+      border-radius: 0;
+      a {
+        padding: 20px 0;
+        font-size: 0;
+        .icons {
+          display: inline-block;
+          transition: display 300ms;
+        }
+        transition: font-size 300ms;
+      }
+    }
+    .customs-collapse {
+      &::before {
+        transform: rotate(-45deg);
+        transition: transform 300ms;
+      }
+      &::after {
+        transform: rotate(45deg);
+        transition: transform 300ms;
+      }
+    }
+  }
+}
 }

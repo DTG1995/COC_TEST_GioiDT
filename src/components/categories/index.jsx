@@ -118,7 +118,7 @@ function Categories(props) {
       title: 'Bulk Delete',
       dataIndex: 'id',
       key: 'bulkDelete',
-      render: (id, record, index) => (
+      render: (id, index) => (
         <label className="input-checkbox">
           <input
             type="checkbox"

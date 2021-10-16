@@ -19,7 +19,9 @@ export const TableData = (props) => {
           <tr key={record[fieldKey]}>
             {(columns || []).map((item) => (
               <td key={item.key}>
-                {item.render ? item.render(record[item.dataIndex], record, recordIndex) : record[item.dataIndex]}
+                <span className="content-cell">
+                  {item.render ? item.render(record[item.dataIndex], recordIndex) : record[item.dataIndex]}
+                </span>
               </td>
             ))}
           </tr>

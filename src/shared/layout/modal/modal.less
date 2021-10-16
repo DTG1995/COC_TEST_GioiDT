@@ -19,6 +19,7 @@ body.on-show-modal {
     margin: 0 auto;
     background-color: @modal-background;
     padding: 24px 45px 45px;
+    max-width: 80%;
     .modal-header {
       display: flex;
       align-items: flex-start;
@@ -50,6 +51,18 @@ body.on-show-modal {
         min-width: 120px;
         & + .btn {
           margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 460px) {
+  .app-modal {
+    .modal {
+      padding: 20px;
+      .modal-header {  
+        .close-modal {
+          margin-right: -10px;
         }
       }
     }
